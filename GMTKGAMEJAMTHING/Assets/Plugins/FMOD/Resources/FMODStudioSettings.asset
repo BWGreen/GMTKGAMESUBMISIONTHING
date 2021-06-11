@@ -408,8 +408,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../Rhythm-Versus/Assets/FMOD Project/Beat-Marker-System/RhythmVersus.fspro
-  sourceBankPath: ../../Rhythm-Versus/Assets/FMOD Project/Beat-Marker-System/Build
+  sourceProjectPath: FMod Assets/FmodProject/FmodProject.fspro
+  sourceBankPath: FMod Assets/FmodProject/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
