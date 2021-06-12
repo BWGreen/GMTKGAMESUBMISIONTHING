@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerDetection : MonoBehaviour
 {
     [SerializeField] NPCStateController controller;
+    private UseItem useItem;
 
     private void OnEnable()
     {
         controller = GetComponentInParent<NPCStateController>();
+        useItem = GetComponent<UseItem>();
     }
     private void Awake()
     {
@@ -33,5 +35,10 @@ public class PlayerDetection : MonoBehaviour
         //     Debug.Log("PlayerExit");
         //     controller.IsplayerIn = false;
         // }
+    }
+
+    public void UseItemOnNPC()
+    {
+        Debug.Log("use item");
     }
 }

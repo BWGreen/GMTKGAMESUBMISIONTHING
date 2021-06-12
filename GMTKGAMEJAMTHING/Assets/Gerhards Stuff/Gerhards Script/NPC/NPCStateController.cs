@@ -23,6 +23,8 @@ public class NPCStateController : MonoBehaviour
 
     //PROPERTIES
 
+    public bool UseItem{get; set;}
+
     public Transform SeatTransform
     {
         get{ return seatTransform;}
@@ -64,6 +66,8 @@ public class NPCStateController : MonoBehaviour
     private void Awake()
     {
         navMeshAgent = this.GetComponent<NavMeshAgent>();
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
     }
     // Start is called before the first frame update
     void Start()
@@ -94,6 +98,11 @@ public class NPCStateController : MonoBehaviour
     {
         stateTimeElapsed += Time.deltaTime;
         return (stateTimeElapsed >= duration);
+    }
+
+    public void ItemCheck()
+    {
+
     }
 
     private void OnExitState()
