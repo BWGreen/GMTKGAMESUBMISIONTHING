@@ -15,6 +15,7 @@ public class SeatAction : NPCActions_SO
         if (controller.SeatTransform != null)
         {
             controller.ChaseTarget = null;
+            controller.UseItem = false;
             controller.NavMeshAgent.destination = controller.SeatTransform.position;
 
             if (Vector3.Distance(controller.NavMeshAgent.transform.position, controller.SeatTransform.position) <= 0.1f)

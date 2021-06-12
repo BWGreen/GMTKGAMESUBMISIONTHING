@@ -21,6 +21,16 @@ public class PlayerController : MonoBehaviour
     [Header("OBJ REFs")]
     [SerializeField] private PoolableObject itemPrefab = null;
 
+
+    // [HeadeList<>List of Enemies")]
+    private List<GameObject> followers;
+    public List<GameObject> Followers
+    {
+        get { return followers; }
+        protected set { followers = value; }
+    }
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -59,7 +69,7 @@ public class PlayerController : MonoBehaviour
                 {
                     Debug.Log(_col.transform.gameObject.GetComponent<ItemCollider>().gameObject.name);
                     _col.transform.gameObject.GetComponent<ItemCollider>().OnPlayerInteract(this);
-                
+
                     break;
                 }
                 else if (_col.transform.gameObject.layer == 16)

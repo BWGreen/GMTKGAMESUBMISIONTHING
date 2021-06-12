@@ -15,7 +15,6 @@ public class ChaseAction : NPCActions_SO
         if (controller.ChaseTarget != null)
         {
             controller.NavMeshAgent.destination = controller.ChaseTarget.position;
-
             if (Vector3.Distance(controller.NavMeshAgent.transform.position, controller.ChaseTarget.position) <= 2.5f)
             {
                 controller.NavMeshAgent.isStopped = true;

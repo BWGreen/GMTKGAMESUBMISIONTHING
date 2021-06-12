@@ -15,7 +15,7 @@ MonoBehaviour:
   nPCActions:
   - {fileID: 11400000, guid: cc54326d2210a1542a04f829bb0bda77, type: 2}
   transitions:
-  - decision: {fileID: 11400000, guid: c3ea330d2242b70468cb62c9c3465c86, type: 2}
+  - decision: {fileID: 11400000, guid: cadaa14f6dda82f4db26e87a8782447a, type: 2}
     trueState: {fileID: 11400000, guid: 0e07171f068d98d4b846ae9c2929b53c, type: 2}
     falseState: {fileID: 11400000, guid: c6ef9f67705a02340b13862d447e0725, type: 2}
   - decision: {fileID: 11400000, guid: 341910213c854614fbcc0de2ff8d1499, type: 2}

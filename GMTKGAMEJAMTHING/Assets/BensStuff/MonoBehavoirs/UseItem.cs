@@ -11,7 +11,6 @@ public class UseItem : ItemCollider
     {
         if(_player.itemInventory.Contains(_requiredItem))
         {
-            Debug.Log("wwwwwwww");
             onUseItem.Invoke();
             if(destroyItemOnUse)
             {

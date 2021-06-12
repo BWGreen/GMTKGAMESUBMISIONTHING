@@ -22,21 +22,27 @@ public class NPCStateController : MonoBehaviour
 
 
     //PROPERTIES
-
-    public bool UseItem{get; set;}
+    private bool memberCollide;
+    public bool MemberCollided
+    {
+        get { return memberCollide; }
+        set { memberCollide = value; }
+    }
+    
+    public bool UseItem { get; set; }
 
     public Transform SeatTransform
     {
-        get{ return seatTransform;}
+        get { return seatTransform; }
     }
-    
+
     private bool inChurch;
     public bool InChurch
     {
         get { return inChurch; }
         set { inChurch = value; }
     }
-    
+
     public bool IsplayerIn { get; set; }
 
     public Transform ChaseTarget
@@ -65,6 +71,7 @@ public class NPCStateController : MonoBehaviour
 
     private void Awake()
     {
+        
         navMeshAgent = this.GetComponent<NavMeshAgent>();
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
@@ -78,6 +85,7 @@ public class NPCStateController : MonoBehaviour
     //This is getting passing the argument rather than the values won't set in the scriptable object
     void Update()
     {
+        Debug.Log(navMeshAgent.velocity);
         currentState.UpdateState(this);
     }
 
@@ -100,9 +108,9 @@ public class NPCStateController : MonoBehaviour
         return (stateTimeElapsed >= duration);
     }
 
-    public void ItemCheck()
+    public void AddFollower(GameObject controller)
     {
-
+        
     }
 
     private void OnExitState()
