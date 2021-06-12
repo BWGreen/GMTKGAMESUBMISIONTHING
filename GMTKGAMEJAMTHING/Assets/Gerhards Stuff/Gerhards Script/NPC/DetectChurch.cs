@@ -16,7 +16,9 @@ public class DetectChurch : MonoBehaviour
         if (other.CompareTag("Church"))
         {
             controller.InChurch = true;
-            Debug.Log("churchIN");
+            ChurchManager _church = other.GetComponent<ChurchManager>();
+            _church.npcsInChurch.Add(controller.nPCStats);
+            _church.CheckIfLevelComplete();
         }
     }
 
@@ -25,7 +27,8 @@ public class DetectChurch : MonoBehaviour
         if (other.CompareTag("Church"))
         {
             controller.InChurch = false;
-            Debug.Log("churchOUT");
+            other.GetComponent<ChurchManager>().npcsInChurch.Remove(controller.nPCStats);  
+            
         }
     }
 }
