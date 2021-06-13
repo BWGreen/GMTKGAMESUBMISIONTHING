@@ -17828,7 +17828,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1179611526764045706, guid: ea094ebf6b512bb4b8507987f6a0d2f2, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1179611526764045706, guid: ea094ebf6b512bb4b8507987f6a0d2f2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18181,7 +18181,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1923217852644222516, guid: 74d4cc10a8df43f44979edafa6f72862, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1923217852644222516, guid: 74d4cc10a8df43f44979edafa6f72862, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18251,6 +18251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1587502737}
   - component: {fileID: 1587502736}
+  - component: {fileID: 1587502738}
   m_Layer: 0
   m_Name: Statue
   m_TagString: Untagged
@@ -18317,12 +18318,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587502735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.67, y: 1.43, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 19.98, y: 3.49, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1587502738
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587502735}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.88, y: 1}
+    newSize: {x: 0.88, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.73, y: 0.88}
+  m_EdgeRadius: 0
 --- !u!1001 &1696971029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18364,7 +18391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1082760441990561771, guid: a0218b5f762b2d3499d0cf094fc6771f, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1082760441990561771, guid: a0218b5f762b2d3499d0cf094fc6771f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -19091,6 +19118,10 @@ PrefabInstance:
     - target: {fileID: 6284675925930153665, guid: df89f290c570a9941b008485315c7edc, type: 3}
       propertyPath: m_Name
       value: Church
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284675925930153666, guid: df89f290c570a9941b008485315c7edc, type: 3}
+      propertyPath: reqNumOfNobles
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6284675925930153666, guid: df89f290c570a9941b008485315c7edc, type: 3}
       propertyPath: levelWin.m_PersistentCalls.m_Calls.Array.size

@@ -17,6 +17,9 @@ public class NPCStateController : MonoBehaviour
     [SerializeField] private Transform seatTransform;
     [SerializeField] private int wayPointIndex;
 
+    [SerializeField] private GameObject patienceHolder = null;
+    [SerializeField] private SpriteRenderer timer = null;
+
 
     private NavMeshAgent navMeshAgent;
 
@@ -85,7 +88,7 @@ public class NPCStateController : MonoBehaviour
     //This is getting passing the argument rather than the values won't set in the scriptable object
     void Update()
     {
-        Debug.Log(navMeshAgent.velocity);
+        // Debug.Log(navMeshAgent.velocity);
         currentState.UpdateState(this);
     }
 
@@ -105,6 +108,11 @@ public class NPCStateController : MonoBehaviour
     public bool checkCountDownElapsed(float duration)
     {
         stateTimeElapsed += Time.deltaTime;
+        if(inChurch)
+        {
+            patienceHolder.SetActive(true);
+            timer.transform.localScale = new Vector3(stateTimeElapsed/duration,1f,1f);
+        }
         return (stateTimeElapsed >= duration);
     }
 
@@ -116,6 +124,8 @@ public class NPCStateController : MonoBehaviour
     private void OnExitState()
     {
         stateTimeElapsed = 0;
+        patienceHolder.SetActive(false);
+        timer.transform.localScale = new Vector3(0f,1f,1f);
     }
 
 

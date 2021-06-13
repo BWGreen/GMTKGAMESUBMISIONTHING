@@ -5,10 +5,23 @@ public class UseItem : ItemCollider
 {
     [SerializeField]private ItemsSO _requiredItem = null;
     [SerializeField]private bool destroyItemOnUse = true;
+    [SerializeField]private bool disableInteractOnUse = true;
+    private bool shouldAcceptItem = true;
     [SerializeField]private UnityEvent onUseItem;
+    [SerializeField]private SpriteRenderer imageHolder = null;
+    [SerializeField]private SpriteRenderer itemHolder = null;
+
+    private void Start()
+    {
+        itemHolder.sprite = _requiredItem.Image;
+    }
 
     public override void OnPlayerInteract(PlayerController _player)
     {
+        if(!shouldAcceptItem)
+        {
+            return;
+        }
         if(_player.itemInventory.Contains(_requiredItem))
         {
             onUseItem.Invoke();
@@ -20,6 +33,11 @@ public class UseItem : ItemCollider
                     {
                         _player.itemInventory[i] = null;
                         _player.UpdateUI();
+                        if(disableInteractOnUse)
+                        {
+                            shouldAcceptItem = false;
+                            imageHolder.gameObject.SetActive(false);
+                        }
                         break;
                     }
                     
@@ -27,4 +45,11 @@ public class UseItem : ItemCollider
             }
         }
     }
+
+    public void ReenableInteraction()
+    {
+        imageHolder.gameObject.SetActive(true);
+        shouldAcceptItem = true;
+    }
+
 }
