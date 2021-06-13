@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{6c2e7c66-ad91-4a84-a945-7ef65422c8f5}">
+		<property name="note">
+			<value>Possible Game Over sound?</value>
+		</property>
+		<property name="assetPath">
+			<value>GameOverSoundQuestionMark.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.68303854875283443</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a8243028-633c-4403-96de-2695b363e6d2}</destination>
+		</relationship>
+	</object>
+</objects>

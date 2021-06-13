@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{e6993878-8295-4a7a-833f-3a1f779abbbc}">
+		<property name="note">
+			<value>Possible Accomplishment Sound for when you get people to pray?</value>
+		</property>
+		<property name="assetPath">
+			<value>AccomplishmentSound.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.80351473922902494</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a8243028-633c-4403-96de-2695b363e6d2}</destination>
+		</relationship>
+	</object>
+</objects>
