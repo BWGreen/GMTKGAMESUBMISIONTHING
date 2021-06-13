@@ -104,6 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b80e2bdeb7bee147bc13ca077a64768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropNoise: event:/SFX/ItemDrop
+  pickupNoise: event:/SFX/ItemPickup
   movementSpeed: 5
   maxNumberOfItems: 3
   itemInventory:
@@ -126,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1923217854627578174}
   - component: {fileID: 1923217854627578173}
-  - component: {fileID: 1923217854627578172}
+  - component: {fileID: -6756562322118639095}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -191,14 +193,20 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1923217854627578172
-AudioListener:
+--- !u!114 &-6756562322118639095
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923217854627578147}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 1923217852644222520}
+  ListenerNumber: -1
 --- !u!1 &2405986369024915061
 GameObject:
   m_ObjectHideFlags: 0

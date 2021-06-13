@@ -8,6 +8,8 @@ using ObjectPooling;
 [RequireComponent(typeof(CircleCollider2D))]
 public class PlayerController : MonoBehaviour
 {
+    [FMODUnity.EventRef]
+    public string dropNoise, pickupNoise, inputSound;
     [Header("Attrib")]
     [SerializeField] private float movementSpeed = 5f;
     private ContactFilter2D filter2D = new ContactFilter2D();
@@ -22,9 +24,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PoolableObject itemPrefab = null;
     [SerializeField] private Animator anim = null;
 
-
     // [HeadeList<>List of Enemies")]
     private List<GameObject> followers;
+
+    bool playerIsMoving;
+
     public List<GameObject> Followers
     {
         get { return followers; }
@@ -60,9 +64,34 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Y",_inputY);
         anim.SetFloat("Speed",Mathf.Abs(_inputX+_inputY));
 
+        if (_inputX != 0 || _inputY != 0.01) {
+            playerIsMoving = true; 
+        } else if (_inputX == 0 || _inputY == 0) {
+            playerIsMoving = false; 
+        }
+
 
         rb.velocity = new Vector3(_inputX, _inputY, 0f) * movementSpeed;
     }
+    void CallFootsteps() 
+    {
+        if (playerIsMoving) 
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(inputSound);
+        }
+            
+    }
+
+    private void Start()
+    {
+        InvokeRepeating("CallFootsteps", 0, movementSpeed); 
+    }
+
+    private void OnDisable()
+    {
+        playerIsMoving = false; 
+    }
+
     private void Interaction()
     {
         if (Input.GetButtonDown("Jump"))
@@ -126,6 +155,7 @@ public class PlayerController : MonoBehaviour
         {
             if (itemInventory[i] != _newItem)
             {
+                FMODUnity.RuntimeManager.PlayOneShot(pickupNoise);
                 itemInventory[i] = _newItem;
                 UpdateUI();
                 return true;
@@ -152,6 +182,7 @@ public class PlayerController : MonoBehaviour
         {
             ItemHolder _newItem = PoolManager.GetNext(itemPrefab, transform).GetComponent<ItemHolder>();
             _newItem.SetItem(_item);
+            FMODUnity.RuntimeManager.PlayOneShot(dropNoise);
         }
     }
 
