@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IdleUpFarmer
+  m_Name: IdleDownWizard
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 2514678950325130008, guid: 696a1d3558aa08f43a4d6324d3c96fe3, type: 3}
+      value: {fileID: -6062098086846225816, guid: 696a1d3558aa08f43a4d6324d3c96fe3, type: 3}
     attribute: m_Sprite
     path: EnemySprite
     classID: 212
@@ -40,7 +40,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 2514678950325130008, guid: 696a1d3558aa08f43a4d6324d3c96fe3, type: 3}
+    - {fileID: -6062098086846225816, guid: 696a1d3558aa08f43a4d6324d3c96fe3, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

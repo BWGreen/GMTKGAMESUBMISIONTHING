@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   idleTime: 1
-  patienceTime: 20
+  patienceTime: 25
   npcJob: Farmer
   npcJobDislike: Noble
