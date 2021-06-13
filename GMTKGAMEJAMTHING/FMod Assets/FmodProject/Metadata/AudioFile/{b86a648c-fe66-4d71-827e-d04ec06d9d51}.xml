@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{b86a648c-fe66-4d71-827e-d04ec06d9d51}">
+		<property name="assetPath">
+			<value>TownMusic_72_CommonTime Demo.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>133.33333333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a8243028-633c-4403-96de-2695b363e6d2}</destination>
+		</relationship>
+	</object>
+</objects>
