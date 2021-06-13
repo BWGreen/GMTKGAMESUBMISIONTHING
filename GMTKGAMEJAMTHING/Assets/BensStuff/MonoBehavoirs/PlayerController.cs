@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ItemUI[] itemUI = new ItemUI[3];
     [Header("OBJ REFs")]
     [SerializeField] private PoolableObject itemPrefab = null;
+    [SerializeField] private Animator anim = null;
 
 
     // [HeadeList<>List of Enemies")]
@@ -55,6 +56,10 @@ public class PlayerController : MonoBehaviour
         float _inputX = Input.GetAxisRaw("Horizontal");
         float _inputY = Input.GetAxisRaw("Vertical");
 
+        anim.SetFloat("X",_inputX);
+        anim.SetFloat("Y",_inputY);
+        anim.SetFloat("Speed",Mathf.Abs(_inputX+_inputY));
+
 
         rb.velocity = new Vector3(_inputX, _inputY, 0f) * movementSpeed;
     }
@@ -67,7 +72,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (_col.transform.gameObject.layer == 15)
                 {
-                    Debug.Log(_col.transform.gameObject.GetComponent<ItemCollider>().gameObject.name);
+                    // Debug.Log(_col.transform.gameObject.GetComponent<ItemCollider>().gameObject.name);
                     _col.transform.gameObject.GetComponent<ItemCollider>().OnPlayerInteract(this);
 
                     break;

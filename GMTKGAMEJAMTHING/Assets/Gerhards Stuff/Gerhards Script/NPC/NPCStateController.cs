@@ -19,9 +19,11 @@ public class NPCStateController : MonoBehaviour
 
     [SerializeField] private GameObject patienceHolder = null;
     [SerializeField] private SpriteRenderer timer = null;
+    [SerializeField] private CharecterSeatUI seatUI = null;
 
 
     private NavMeshAgent navMeshAgent;
+    private Animator anim;
 
 
     //PROPERTIES
@@ -76,6 +78,7 @@ public class NPCStateController : MonoBehaviour
     {
         
         navMeshAgent = this.GetComponent<NavMeshAgent>();
+        anim = this.GetComponent<Animator>();
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
     }
@@ -91,6 +94,14 @@ public class NPCStateController : MonoBehaviour
         // Debug.Log(navMeshAgent.velocity);
         currentState.UpdateState(this);
     }
+
+    private void LateUpdate()
+    {
+        anim.SetFloat("X",navMeshAgent.velocity.x);
+        anim.SetFloat("Y",navMeshAgent.velocity.y);
+        anim.SetFloat("Speed",Mathf.Abs(navMeshAgent.velocity.magnitude));
+    }
+    
 
     private void OnDrawGizmos()
     {
@@ -112,6 +123,7 @@ public class NPCStateController : MonoBehaviour
         {
             patienceHolder.SetActive(true);
             timer.transform.localScale = new Vector3(stateTimeElapsed/duration,1f,1f);
+            seatUI.ToggleUI(false);
         }
         return (stateTimeElapsed >= duration);
     }
@@ -126,6 +138,7 @@ public class NPCStateController : MonoBehaviour
         stateTimeElapsed = 0;
         patienceHolder.SetActive(false);
         timer.transform.localScale = new Vector3(0f,1f,1f);
+        seatUI.ToggleUI(true);
     }
 
 

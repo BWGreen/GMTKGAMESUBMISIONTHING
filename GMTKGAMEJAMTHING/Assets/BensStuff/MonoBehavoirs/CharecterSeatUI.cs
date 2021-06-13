@@ -32,10 +32,10 @@ public class CharecterSeatUI : MonoBehaviour
         }
     }
 
-    public void ToggleThing()
+    public void ToggleUI(bool _state = false)
     {
-        itemSpriteRend.gameObject.SetActive(!itemSpriteRend.gameObject.activeInHierarchy);
-        itemHolder.gameObject.SetActive(!itemSpriteRend.gameObject.activeInHierarchy);
+        itemSpriteRend.gameObject.SetActive(_state);
+        itemHolder.gameObject.SetActive(_state);
     }
 
 
