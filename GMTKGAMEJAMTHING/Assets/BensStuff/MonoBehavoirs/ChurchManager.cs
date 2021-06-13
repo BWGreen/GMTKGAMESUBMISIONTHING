@@ -21,6 +21,7 @@ public class ChurchManager : MonoBehaviour
         int _farmers = 0;
         int _nobles = 0;
         int _wizards = 0;
+        
         foreach (var _npc in npcsInChurch)
         {
             if(_npc==farmers)
@@ -38,7 +39,6 @@ public class ChurchManager : MonoBehaviour
             if(reqnNumOfFarmers<=_farmers&&reqNumOfNobles<=_nobles&&_wizards<=reqNumOfWizards)
             {
                 levelWin.Invoke();
-                Debug.Log("AGGG");
             }
         }
         
