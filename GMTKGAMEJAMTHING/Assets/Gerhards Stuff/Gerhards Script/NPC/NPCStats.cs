@@ -9,6 +9,7 @@ public class NPCStats : ScriptableObject
     public float moveSpeed = 2f;
     public float idleTime = 1f;
     public float patienceTime = 120f;
+    public float inSeatTimer = 2.5f;
     public string npcJob;
     public string npcJobDislike;
 }

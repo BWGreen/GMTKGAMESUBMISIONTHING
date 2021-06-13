@@ -27,6 +27,7 @@ public class NPCStateController : MonoBehaviour
 
 
     //PROPERTIES
+    public bool InSeat { get; set; }
     private bool memberCollide;
     public bool MemberCollided
     {

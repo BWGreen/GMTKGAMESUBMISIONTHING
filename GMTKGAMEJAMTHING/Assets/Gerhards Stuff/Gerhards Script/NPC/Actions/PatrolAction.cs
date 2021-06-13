@@ -20,6 +20,8 @@ public class PatrolAction : NPCActions_SO
         // Debug.unityLogger.Log("Entered Patrol Action");
         controller.NavMeshAgent.destination = controller.WayPoints[controller.WayPointIndex].position;
         controller.NavMeshAgent.isStopped = false;
+        controller.GetComponent<UseItem>().enabled = true;
+        controller.GetComponent<UseItem>().ShouldAcceptItem = true;
 
         if (controller.NavMeshAgent.remainingDistance <= 1.0f && !controller.NavMeshAgent.pathPending)
         {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class DetectChurch : MonoBehaviour
 {
     [SerializeField] NPCStateController controller;
+    private int memberCounter;
 
     private void OnEnable()
     {
@@ -16,9 +17,22 @@ public class DetectChurch : MonoBehaviour
         if (other.CompareTag("Church"))
         {
             controller.InChurch = true;
-            ChurchManager _church = other.GetComponent<ChurchManager>();
-            _church.npcsInChurch.Add(controller.nPCStats);
-            _church.CheckIfLevelComplete();
+
+        }
+    }
+
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Church"))
+        {
+            if (controller.InSeat == true && memberCounter <=0 )
+            {
+                ChurchManager _church = other.GetComponent<ChurchManager>();
+                _church.npcsInChurch.Add(controller.nPCStats);
+                memberCounter++;
+                _church.CheckIfLevelComplete();
+            }
         }
     }
 
@@ -27,8 +41,8 @@ public class DetectChurch : MonoBehaviour
         if (other.CompareTag("Church"))
         {
             controller.InChurch = false;
-            other.GetComponent<ChurchManager>().npcsInChurch.Remove(controller.nPCStats);  
-            
+            other.GetComponent<ChurchManager>().npcsInChurch.Remove(controller.nPCStats);
+            memberCounter--;
         }
     }
 }

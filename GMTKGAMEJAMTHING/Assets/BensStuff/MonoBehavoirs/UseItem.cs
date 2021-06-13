@@ -3,13 +3,27 @@ using UnityEngine.Events;
 
 public class UseItem : ItemCollider
 {
-    [SerializeField]private ItemsSO _requiredItem = null;
-    [SerializeField]private bool destroyItemOnUse = true;
-    [SerializeField]private bool disableInteractOnUse = true;
+    [SerializeField] private ItemsSO _requiredItem = null;
+    [SerializeField] private bool destroyItemOnUse = true;
+    [SerializeField] private bool disableInteractOnUse = true;
     private bool shouldAcceptItem = true;
-    [SerializeField]private UnityEvent onUseItem;
-    [SerializeField]private SpriteRenderer imageHolder = null;
-    [SerializeField]private SpriteRenderer itemHolder = null;
+    [SerializeField] private UnityEvent onUseItem;
+    [SerializeField] private SpriteRenderer imageHolder = null;
+    [SerializeField] private SpriteRenderer itemHolder = null;
+
+    public bool ShouldAcceptItem
+    {
+        get
+        {
+            ReenableInteraction();
+            return shouldAcceptItem;
+        }
+        set
+        {
+            shouldAcceptItem = value;
+        }
+    }
+
 
     private void Start()
     {
@@ -18,29 +32,29 @@ public class UseItem : ItemCollider
 
     public override void OnPlayerInteract(PlayerController _player)
     {
-        if(!shouldAcceptItem)
+        if (!shouldAcceptItem)
         {
             return;
         }
-        if(_player.itemInventory.Contains(_requiredItem))
+        if (_player.itemInventory.Contains(_requiredItem))
         {
             onUseItem.Invoke();
-            if(destroyItemOnUse)
+            if (destroyItemOnUse)
             {
                 for (int i = 0; i < _player.itemInventory.Count; i++)
                 {
-                    if(_player.itemInventory[i]==_requiredItem)
+                    if (_player.itemInventory[i] == _requiredItem)
                     {
                         _player.itemInventory[i] = null;
                         _player.UpdateUI();
-                        if(disableInteractOnUse)
+                        if (disableInteractOnUse)
                         {
                             shouldAcceptItem = false;
                             imageHolder.gameObject.SetActive(false);
                         }
                         break;
                     }
-                    
+
                 }
             }
         }
