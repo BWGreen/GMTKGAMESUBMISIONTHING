@@ -602,7 +602,7 @@ MonoBehaviour:
   farmers: {fileID: 11400000, guid: 16dd4cc5bbeb2c740a4684b5cfbb2845, type: 2}
   nobles: {fileID: 11400000, guid: 58d7b5ba8f930fc4f88667e4553be526, type: 2}
   wizards: {fileID: 11400000, guid: 0851254f44584374e8096ebcb0efe18b, type: 2}
-  farmerSprite: {fileID: 6672798043584185653, guid: 696a1d3558aa08f43a4d6324d3c96fe3, type: 3}
+  farmerSprite: {fileID: -7679861504393862672, guid: 696a1d3558aa08f43a4d6324d3c96fe3, type: 3}
   nobleSprite: {fileID: 1819117549948833062, guid: 696a1d3558aa08f43a4d6324d3c96fe3, type: 3}
   wizardSprite: {fileID: -6062098086846225816, guid: 696a1d3558aa08f43a4d6324d3c96fe3, type: 3}
   itemSpriteRend: {fileID: 9008089124339663369}

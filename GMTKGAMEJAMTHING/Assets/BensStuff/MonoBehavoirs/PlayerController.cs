@@ -124,13 +124,25 @@ public class PlayerController : MonoBehaviour
     {
         for (int i = 0; i < itemInventory.Count; i++)
         {
-            if (itemInventory[i] != _newItem)
+            if (itemInventory[i] == null)
             {
                 itemInventory[i] = _newItem;
                 UpdateUI();
                 return true;
             }
-
+        }
+        for (int i = 0; i < itemInventory.Count; i++)
+        {
+            if (itemInventory[i] != _newItem)
+            {
+                ItemHolder _item = PoolManager.GetNext(itemPrefab, transform).GetComponent<ItemHolder>();
+                _item.SetItem(itemInventory[i]);
+                _item.transform.position+=Vector3.forward*0.1f;
+                _item.transform.localScale = Vector3.one*0.75f;
+                itemInventory[i] = _newItem;
+                UpdateUI();
+                return true;
+            }
         }
         return false;
     }
@@ -152,6 +164,8 @@ public class PlayerController : MonoBehaviour
         {
             ItemHolder _newItem = PoolManager.GetNext(itemPrefab, transform).GetComponent<ItemHolder>();
             _newItem.SetItem(_item);
+            _newItem.transform.position+=Vector3.forward*0.1f;
+            _newItem.transform.localScale = Vector3.one*0.75f;
         }
     }
 
